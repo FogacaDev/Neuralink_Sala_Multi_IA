@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sala Multi-IA</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1><i class="fas fa-brain"></i> NeuraLink</h1>
+      <p>Sala Multi-IA</p>
+    </div>
+    
+    <div class="controles">
+      <!-- Tema -->
+      <button id="toggleTheme" title="Tema Claro/Escuro">
+        <i class="fas fa-moon"></i>
+      </button>
+
+      <!-- Modo Infinito -->
+      <div class="toggle-control">
+        <label class="switch">
+          <input type="checkbox" id="modoInfinito" />
+          <span class="slider round"></span>
+        </label>
+        <span>Modo Infinito</span>
+      </div>
+
+      <!-- Velocidade -->
+      <div class="velocidade-control">
+        <label for="velocidade">Velocidade:</label>
+        <input type="range" id="velocidade" min="1" max="10" value="5" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <aside id="painel-ias">
+      <h2>IAs Disponíveis</h2>
+      <div class="status-geral">
+        <span id="status-texto">Modo normal</span>
+        <span id="contador-mensagens">0 mensagens</span>
+      </div>
+      
+      <div id="lista-ias">
+        <!-- Preenchido via JavaScript -->
+      </div>
+      
+      <div class="controles-ias">
+        <button id="ativar-todas" class="btn">Ativar Todas</button>
+        <button id="desativar-todas" class="btn">Desativar Todas</button>
+      </div>
+      
+      <div class="estatisticas">
+        <h3>Estatísticas</h3>
+        <ul id="estatisticas-lista">
+          <li>Tempo ativo: <span id="tempo-ativo">00:00:00</span></li>
+          <li>Total de mensagens: <span id="total-mensagens">0</span></li>
+        </ul>
+      </div>
+    </aside>
+
+    <section id="chat">
+      <div id="mensagens">
+        <div class="mensagem-sistema">
+          Bem-vindo à Sala Multi-IA! Ative o "Modo Infinito" para que as IAs conversem automaticamente.
+        </div>
+      </div>
+      
+      <form id="formulario-chat">
+        <input type="text" id="input-mensagem" placeholder="Digite sua mensagem..." required />
+        <button type="submit" class="btn-enviar">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>NeuraLink Sala Multi-IA &copy; 2025</p>
+  </footer>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
